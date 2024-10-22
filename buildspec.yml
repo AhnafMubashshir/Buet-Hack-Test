@@ -7,9 +7,12 @@ env:
     VERSION: "/buet/hackathon/version"
     K8S_CLUSTER_NAME: "/buet/hackathon/k8s-cluster-name"
     K8S_NAMESPACE: "/buet/hackathon/k8s-namespace"
-    STUDENT_SERVICE_APPLICATION_SETTINGS: "/buet/hackathon/student-service-application-settings"
+    REGISTRATION_SERVER_URL: "/buet/hackathon/registration-server-url"
+    SECRET_KEY: "/buet/hackathon/secret-key"
+    DJANGO_SUPERUSER_USERNAME: "/buet/hackathon/django-superuser-username"
+    DJANGO_SUPERUSER_EMAIL: "/buet/hackathon/django-superuser-email"
+    DJANGO_SUPERUSER_PASSWORD: "/buet/hackathon/django-superuser-password"
     STUDENT_SERVICE_DB_SETTINGS: "/buet/hackathon/student-service-db-settings"
-    COURSE_SERVICE_APPLICATION_SETTINGS: "/buet/hackathon/course-service-application-settings"
     COURSE_SERVICE_DB_SETTINGS: "/buet/hackathon/course-service-db-settings"
     DOCKER_USERNAME: "/buet/hackathon/docker-hub-username"
     DOCKER_PASSWORD: "/buet/hackathon/docker-hub-password"
@@ -53,8 +56,14 @@ phases:
       - mkdir tmp
 
       - echo Getting application settings in tmp directory...
-      - echo $COURSE_SERVICE_APPLICATION_SETTINGS > ./tmp/course.env
-      - echo $STUDENT_SERVICE_APPLICATION_SETTINGS > ./tmp/student.env
+      - echo "SECRET_KEY=$SECRET_KEY" > ./tmp/course.env
+      - echo "REGISTRATION_SERVER_URL=$REGISTRATION_SERVER_URL" >> ./tmp/course.env
+
+      - echo Getting application settings in tmp directory...
+      - echo "SECRET_KEY=$SECRET_KEY" > ./tmp/student.env
+      - echo "DJANGO_SUPERUSER_USERNAME=$DJANGO_SUPERUSER_USERNAME" > ./tmp/student.env
+      - echo "DJANGO_SUPERUSER_EMAIL=$DJANGO_SUPERUSER_EMAIL" > ./tmp/student.env
+      - echo "DJANGO_SUPERUSER_PASSWORD=$DJANGO_SUPERUSER_PASSWORD" > ./tmp/student.env
 
       - echo "Contents of course.env:"
       - cat ./tmp/course.env
