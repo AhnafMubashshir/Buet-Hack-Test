@@ -56,6 +56,11 @@ phases:
       - echo $COURSE_SERVICE_APPLICATION_SETTINGS > ./tmp/course.env
       - echo $STUDENT_SERVICE_APPLICATION_SETTINGS > ./tmp/student.env
 
+      - echo "Contents of course.env:"
+      - cat ./tmp/course.env
+      - echo "Contents of student.env:"
+      - cat ./tmp/student.env
+
       - echo Getting database settings in tmp directory...
       - echo $COURSE_SERVICE_DB_SETTINGS > ./tmp/course.json
       - echo $STUDENT_SERVICE_DB_SETTINGS > ./tmp/student.json
