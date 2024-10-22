@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'registration.wsgi.application'
 # settings.py
 DJANGO_SUPERUSER_USERNAME = 'hhhh'
 DJANGO_SUPERUSER_PASSWORD = 'hhhh'
-DJANGO_SUPERUSER_EMAIL = config('EMAIL')
+DJANGO_SUPERUSER_EMAIL = 'bsse1232@iit.du.ac.bd'
 
 
 # Database

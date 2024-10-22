@@ -30,11 +30,11 @@ spec:
                   key: student.json
           resources:
             requests:
-              memory: "128Mi" # Minimal memory request
-              cpu: "5m" # Minimal CPU request
+              memory: "128Mi"
+              cpu: "5m"
             limits:
-              memory: "256Mi" # Minimal memory limit
-              cpu: "250m" # Minimal CPU limit
+              memory: "256Mi"
+              cpu: "250m"
           imagePullPolicy: Always
 ---
 apiVersion: v1
