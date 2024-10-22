@@ -61,14 +61,9 @@ phases:
 
       - echo Getting application settings in tmp directory...
       - echo "SECRET_KEY=$SECRET_KEY" > ./tmp/student.env
-      - echo "DJANGO_SUPERUSER_USERNAME=$DJANGO_SUPERUSER_USERNAME" > ./tmp/student.env
-      - echo "DJANGO_SUPERUSER_EMAIL=$DJANGO_SUPERUSER_EMAIL" > ./tmp/student.env
-      - echo "DJANGO_SUPERUSER_PASSWORD=$DJANGO_SUPERUSER_PASSWORD" > ./tmp/student.env
-
-      - echo "Contents of course.env:"
-      - cat ./tmp/course.env
-      - echo "Contents of student.env:"
-      - cat ./tmp/student.env
+      - echo "DJANGO_SUPERUSER_USERNAME=$DJANGO_SUPERUSER_USERNAME" >> ./tmp/student.env
+      - echo "DJANGO_SUPERUSER_EMAIL=$DJANGO_SUPERUSER_EMAIL" >> ./tmp/student.env
+      - echo "DJANGO_SUPERUSER_PASSWORD=$DJANGO_SUPERUSER_PASSWORD" >> ./tmp/student.env
 
       - echo Getting database settings in tmp directory...
       - echo $COURSE_SERVICE_DB_SETTINGS > ./tmp/course.json
