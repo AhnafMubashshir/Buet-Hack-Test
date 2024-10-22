@@ -13,6 +13,6 @@ from django.core.wsgi import get_wsgi_application
 from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'registration.settings')
-print(settings.secret_key)
+print(settings.SECRET_KEY)
 
 application = get_wsgi_application()
