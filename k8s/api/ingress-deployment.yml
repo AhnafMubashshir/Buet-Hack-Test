@@ -17,7 +17,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: api.course.projectsbd.me
+    - host: api.projectsbd.me
       http:
         paths:
           - path: /v1/course
@@ -27,7 +27,7 @@ spec:
                 name: course-service
                 port:
                   number: 80
-    - host: api.registration.projectsbd.me
+    - host: api.projectsbd.me
       http:
         paths:
           - path: /v1/registration
