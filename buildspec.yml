@@ -89,6 +89,10 @@ phases:
       - kubectl apply -f k8s/api/registration-deployment.yml
       - kubectl rollout restart deployment/registration-deployment -n $K8S_NAMESPACE
 
+      - echo "Deploying ingress Service..."
+      - kubectl apply -f k8s/api/ingress-deployment.yml
+      - kubectl rollout restart deployment/ingress-deployment -n $K8S_NAMESPACE
+
       - echo "Checking pod status..."
       - kubectl get pods -n $K8S_NAMESPACE
 

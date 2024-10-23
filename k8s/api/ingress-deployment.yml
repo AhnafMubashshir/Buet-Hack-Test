@@ -1,0 +1,31 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: buet-hackathon-namespace
+  name: hackathon-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+spec:
+  rules:
+    - host: api.course.projectsbd.me
+      http:
+        paths:
+          - path: /v1/course
+            pathType: Prefix
+            backend:
+              service:
+                name: course-service
+                port:
+                  number: 80
+    - host: api.registration.projectsbd.me
+      http:
+        paths:
+          - path: /v1/registration
+            pathType: Prefix
+            backend:
+              service:
+                name: registration-service
+                port:
+                  number: 80
