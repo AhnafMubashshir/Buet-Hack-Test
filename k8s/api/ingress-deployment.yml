@@ -4,10 +4,10 @@ metadata:
   name: hackathon-ingress
   namespace: buet-hackathon-namespace
   annotations:
-    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:863518452741:certificate/6c378461-1ff8-4702-82db-a1a12b0a9524
     nginx.ingress.kubernetes.io/proxy-body-size: 50m
 spec:
+  ingressClassName: alb
   rules:
     - host: api.course.projectsbd.me
       http:
