@@ -63,6 +63,6 @@ spec:
     name: course-deployment
   minReplicas: 1
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 50  # target average CPU utilization percentage
+  targetCPUUtilizationPercentage: 50  
 
 
