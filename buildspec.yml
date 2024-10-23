@@ -100,7 +100,7 @@ phases:
 
       - echo "Deploying ingress Service..."
       - kubectl apply -f k8s/api/ingress-deployment.yml
-      - kubectl rollout restart service/ingress-nginx-controller -n $K8S_NAMESPACE
+      # - kubectl rollout restart service/ingress-nginx-controller -n $K8S_NAMESPACE
 
       - echo "Checking pod status..."
       - kubectl get pods -n $K8S_NAMESPACE
